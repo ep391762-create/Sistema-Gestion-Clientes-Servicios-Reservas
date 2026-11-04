@@ -1,0 +1,34 @@
+2026-11-03 22:26:42,982 | INFO | Inicio de ejecución del sistema.
+2026-11-03 22:26:42,983 | INFO | Prueba 1: Registro de un cliente válido | Operación exitosa
+2026-11-03 22:26:42,983 | WARNING | Prueba 2: Registro de un cliente con correo incorrecto | El correo electrónico no es válido.
+2026-11-03 22:26:42,984 | INFO | Prueba 3: Registro de tres servicios especializados | Operación exitosa
+2026-11-03 22:26:42,984 | INFO | Prueba 4: Validación de capacidad de una sala | Operación exitosa
+2026-11-03 22:26:42,984 | INFO | Prueba 5: Creación de una reserva válida | Operación exitosa
+2026-11-03 22:26:42,984 | INFO | Prueba 6: Confirmación de una reserva | Operación exitosa
+2026-11-03 22:26:42,984 | INFO | Prueba 7: Cálculo de costo con impuesto y descuento | Operación exitosa
+2026-11-03 22:26:42,985 | WARNING | Prueba 8: Alquiler de equipos con cantidad no disponible | No hay suficientes equipos disponibles.
+2026-11-03 22:26:42,985 | INFO | Prueba 9: Cancelación de una reserva | Operación exitosa
+2026-11-03 22:26:42,985 | WARNING | Prueba 10: Intento de finalizar una reserva cancelada | Solamente se pueden finalizar reservas confirmadas.
+2026-11-03 22:26:42,985 | INFO | Polimorfismo ejecutado para el servicio: Sala de reuniones
+2026-11-03 22:26:42,985 | INFO | Polimorfismo ejecutado para el servicio: Computadores portátiles
+2026-11-03 22:26:42,986 | INFO | Polimorfismo ejecutado para el servicio: Asesoría tecnológica
+2026-11-03 22:26:42,986 | INFO | Prueba 11: Demostración de polimorfismo entre servicios | Operación exitosa
+2026-11-03 22:26:42,986 | INFO | Prueba 12: Consulta de información de una reserva | Operación exitosa
+2026-11-03 22:26:42,986 | INFO | Finalización de ejecución del sistema.
+2026-11-03 22:54:44,433 | INFO | Inicio de ejecución del sistema.
+2026-11-03 22:54:44,434 | INFO | Prueba 1: Registro de un cliente válido | Operación exitosa
+2026-11-03 22:54:44,434 | WARNING | Prueba 2: Registro de un cliente con correo incorrecto | El correo electrónico no es válido.
+2026-11-03 22:54:44,434 | INFO | Prueba 3: Registro de tres servicios especializados | Operación exitosa
+2026-11-03 22:54:44,435 | INFO | Prueba 4: Validación de capacidad de una sala | Operación exitosa
+2026-11-03 22:54:44,435 | INFO | Prueba 5: Creación de una reserva válida | Operación exitosa
+2026-11-03 22:54:44,435 | INFO | Prueba 6: Confirmación de una reserva | Operación exitosa
+2026-11-03 22:54:44,436 | INFO | Prueba 7: Cálculo de costo con impuesto y descuento | Operación exitosa
+2026-11-03 22:54:44,436 | WARNING | Prueba 8: Alquiler de equipos con cantidad no disponible | No hay suficientes equipos disponibles.
+2026-11-03 22:54:44,436 | INFO | Prueba 9: Cancelación de una reserva | Operación exitosa
+2026-11-03 22:54:44,436 | WARNING | Prueba 10: Intento de finalizar una reserva cancelada | Solamente se pueden finalizar reservas confirmadas.
+2026-11-03 22:54:44,437 | INFO | Polimorfismo ejecutado para el servicio: Sala de reuniones
+2026-11-03 22:54:44,437 | INFO | Polimorfismo ejecutado para el servicio: Computadores portátiles
+2026-11-03 22:54:44,437 | INFO | Polimorfismo ejecutado para el servicio: Asesoría tecnológica
+2026-11-03 22:54:44,437 | INFO | Prueba 11: Demostración de polimorfismo entre servicios | Operación exitosa
+2026-11-03 22:54:44,438 | INFO | Prueba 12: Consulta de información de una reserva | Operación exitosa
+2026-11-03 22:54:44,438 | INFO | Finalización de ejecución del sistema.
