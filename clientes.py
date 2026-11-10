@@ -135,3 +135,35 @@ class Cliente(EntidadSistema):
             f"Correo: {self.correo} | "
             f"Teléfono: {self.telefono}"
         )
+    
+class GestorClientes:
+    """
+    Clase encargada de administrar la lista de clientes.
+    Valida que no haya clientes duplicados por correo o teléfono.
+    """
+    def __init__(self):
+        self._clientes = []
+
+    def agregar_cliente(self, cliente):
+        """Agrega un cliente validando que no exista previamente."""
+       
+        for c in self._clientes:
+            if c.correo == cliente.correo:
+                raise ClienteError(f"El correo {cliente.correo} ya está registrado.")
+            if c.telefono == cliente.telefono:
+                raise ClienteError(f"El teléfono {cliente.telefono} ya está registrado.")
+        
+        self._clientes.append(cliente)
+        return True
+
+    def actualizar_cliente(self, correo_buscar, nuevo_nombre=None, nuevo_correo=None, nuevo_telefono=None):
+        """Busca un cliente por su correo y actualiza sus datos."""
+        for c in self._clientes:
+            if c.correo == correo_buscar:
+                c.actualizar_datos(nombre=nuevo_nombre, correo=nuevo_correo, telefono=nuevo_telefono)
+                return True
+        raise ClienteError(f"No se encontró un cliente con el correo {correo_buscar}.")
+
+    def obtener_clientes(self):
+        """Devuelve la lista de clientes."""
+        return self._clientes

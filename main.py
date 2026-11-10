@@ -8,7 +8,7 @@ Coordina los módulos, ejecuta operaciones y realiza pruebas.
 import logging
 from pathlib import Path
 
-from clientes import Cliente
+from clientes import Cliente, GestorClientes
 from servicios import (
     ReservaSala,
     AlquilerEquipos,
@@ -223,6 +223,32 @@ def consultar_reserva():
 
     return reserva.obtener_informacion()
 
+def probar_cliente_duplicado():
+    """Intenta registrar un cliente con un correo ya existente."""
+    gestor = GestorClientes()
+    cliente1 = Cliente("Carlos Ramirez", "carlos@gmail.com", "3101234567")
+    gestor.agregar_cliente(cliente1)
+    
+    cliente2 = Cliente("Carlos Copia", "carlos@gmail.com", "3209876543")
+    return gestor.agregar_cliente(cliente2)
+
+def probar_tarifa_invalida():
+    """Intenta crear un servicio con tarifa negativa."""
+    return ReservaSala(
+        "Sala Error",
+        "Prueba",
+        -5000, 
+        capacidad=10
+    )
+
+def probar_capacidad_incorrecta():
+    """Intenta validar una sala con más personas de su capacidad."""
+    sala = sistema["servicios"][0]
+    return sala.validar_parametros(personas=50) 
+
+def probar_datos_faltantes():
+    """Intenta crear un cliente sin nombre."""
+    return Cliente(None, "test@test.com", "1234567")
 
 # =====================================================
 # DEMOSTRACIÓN DE POLIMORFISMO
@@ -286,6 +312,19 @@ def main():
     )
 
     ejecutar_prueba(
+        2.1,
+        "Intento de registrar un cliente duplicado",
+        probar_cliente_duplicado
+    )
+
+    ejecutar_prueba(
+        2.2,
+        "Intento de crear un cliente sin datos obligatorios",
+        probar_datos_faltantes
+
+    )
+
+    ejecutar_prueba(
         3,
         "Registro de tres servicios especializados",
         crear_servicios
@@ -319,6 +358,18 @@ def main():
         8,
         "Alquiler de equipos con cantidad no disponible",
         validar_alquiler_invalido
+    )
+
+    ejecutar_prueba(
+        8.1,
+        "Intento de crear un servicio con tarifa inválida",
+        probar_tarifa_invalida
+    )
+
+    ejecutar_prueba(
+        8.2,
+        "Intento de reservar una sala con capacidad excedida",
+        probar_capacidad_incorrecta
     )
 
     ejecutar_prueba(

@@ -210,7 +210,6 @@ class AlquilerEquipos(Servicio):
         self._unidades_disponibles = self._validar_unidades(
             unidades_disponibles
         )
-
     @staticmethod
     def _validar_unidades(unidades):
         if (
@@ -221,18 +220,16 @@ class AlquilerEquipos(Servicio):
             raise ValidacionError(
                 "Las unidades disponibles deben ser un entero no negativo."
             )
-
         return unidades
 
-    def calcular_costo(self, duracion, impuesto=0, descuento=0):
+    def calcular_costo(self, duracion, cantidad=1, impuesto=0, descuento=0):
         self.validar()
-        self._validar_parametros_costo(
-            duracion, impuesto, descuento
-        )
+        self._validar_parametros_costo(duracion, impuesto, descuento)
+        self.validar_parametros(cantidad=cantidad)
 
-        costo = self.precio_base * duracion
+        costo = self.precio_base * duracion * cantidad
         return self._calcular_total(costo, impuesto, descuento)
-
+    
     def describir_servicio(self):
         return (
             f"Alquiler de equipos: {self.nombre}. "
